@@ -3,810 +3,716 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashwin Gupta — Privacy Counsel @ Apple</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Ashwin Gupta — Privacy Counsel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #0F0F0F;
-  --paper: #F5F2EC;
-  --cream: #EDE9E0;
-  --red: #B5292A;
-  --red-pale: #F4E8E8;
-  --gray: #6B6460;
-  --border: rgba(15,15,15,0.12);
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans: 'Instrument Sans', system-ui, sans-serif;
+  --white: #ffffff;
+  --off: #f5f5f7;
+  --ink: #1d1d1f;
+  --mid: #6e6e73;
+  --light: #86868b;
+  --line: #d2d2d7;
+  --red: #bf4800;
+  --red-bg: #fff2ec;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: var(--sans);
-  background: var(--paper);
+  font-family: var(--font);
+  background: var(--white);
   color: var(--ink);
-  font-size: 16px;
-  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
-/* ── NAV ── */
+/* ─── NAV ─── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(245,242,236,0.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  height: 52px;
-  display: flex; align-items: center;
-  padding: 0 40px;
-  justify-content: space-between;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
 }
-.nav-name {
-  font-family: var(--serif); font-size: 15px; letter-spacing: 0.01em;
-  font-style: italic;
+.nav-id {
+  font-size: 13px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em;
 }
-.nav-links { display: flex; gap: 2px; }
+.nav-links { display: flex; gap: 0; }
 .nav-links a {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.09em;
-  text-transform: uppercase; text-decoration: none;
-  color: var(--gray); padding: 4px 12px; border-radius: 2px;
-  transition: color 0.2s, background 0.2s;
+  font-size: 12px; color: var(--mid); text-decoration: none;
+  padding: 0 12px; line-height: 48px;
+  transition: color 0.15s;
 }
-.nav-links a:hover, .nav-links a.active {
-  color: var(--ink); background: var(--cream);
-}
-.nav-tag {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
-  background: var(--red); color: #fff;
-  padding: 4px 12px; border-radius: 2px;
+.nav-links a:hover, .nav-links a.on { color: var(--ink); }
+.nav-badge {
+  font-size: 11px; font-weight: 500; background: var(--ink);
+  color: var(--white); padding: 4px 10px; border-radius: 20px;
+  letter-spacing: 0.01em;
 }
 
-/* ── HERO ── */
+/* ─── HERO ─── */
 #hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 52px;
-}
-.hero-left {
-  background: var(--ink);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 64px 56px;
-  position: relative; overflow: hidden;
-}
-.hero-left::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><circle cx="30" cy="30" r="0.5" fill="rgba(255,255,255,0.06)"/></svg>') repeat;
-}
-.hero-eyebrow {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
-  margin-bottom: 24px; position: relative;
-}
-.hero-name {
-  font-family: var(--serif);
-  font-size: clamp(52px, 6vw, 80px);
-  font-weight: 400; line-height: 1.0;
-  letter-spacing: -0.02em;
-  color: #fff; margin-bottom: 32px; position: relative;
-}
-.hero-name em { font-style: italic; color: rgba(255,255,255,0.55); }
-.hero-role {
-  font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.6);
-  line-height: 1.6; max-width: 340px; position: relative;
-}
-.hero-role strong { color: rgba(255,255,255,0.9); font-weight: 500; }
-
-.hero-right {
-  background: var(--cream);
+  min-height: 100vh; padding-top: 48px;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 64px 56px;
+  padding-left: 80px; padding-right: 80px;
+  border-bottom: 1px solid var(--line);
 }
-.hero-pull {
-  font-family: var(--serif); font-size: clamp(22px, 2.5vw, 30px);
-  font-style: italic; line-height: 1.45; color: var(--ink);
-  margin-bottom: 40px; padding-bottom: 40px;
-  border-bottom: 1px solid var(--border);
+.hero-label {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--light);
+  margin-bottom: 32px;
 }
-.hero-pull em { color: var(--red); font-style: normal; }
-.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.stat { }
-.stat-n {
-  font-family: var(--serif); font-size: 36px; font-weight: 700;
-  color: var(--red); line-height: 1; margin-bottom: 4px;
+.hero-h1 {
+  font-size: clamp(56px, 7vw, 88px);
+  font-weight: 300; letter-spacing: -0.04em; line-height: 1.0;
+  color: var(--ink); margin-bottom: 40px;
 }
-.stat-l {
-  font-size: 12px; color: var(--gray); font-weight: 400;
-  line-height: 1.4; text-transform: uppercase; letter-spacing: 0.06em;
-}
-
-/* ── SECTIONS ── */
-section { border-top: 1px solid var(--border); }
-.section-wrap { max-width: 760px; margin: 0 auto; padding: 96px 40px; }
-
-.section-label {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--red);
-  margin-bottom: 48px;
-  display: flex; align-items: center; gap: 16px;
-}
-.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-h2 {
-  font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 400; letter-spacing: -0.02em;
-  line-height: 1.1; margin-bottom: 40px;
-}
-h2 em { font-style: italic; color: var(--gray); }
-
-.body-text {
-  font-size: 16px; font-weight: 300; color: #2a2a2a;
-  line-height: 1.85; margin-bottom: 20px;
-}
-.body-text:last-child { margin-bottom: 0; }
-
-blockquote {
-  border-left: 3px solid var(--red);
-  padding: 4px 0 4px 28px;
-  margin: 40px 0;
-}
-blockquote p {
-  font-family: var(--serif); font-size: 22px; font-style: italic;
-  color: var(--ink); line-height: 1.5; font-weight: 400;
-}
-
-/* ── STORY ALTERNATING ── */
-.story-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  border: 1px solid var(--border); border-radius: 2px; overflow: hidden;
-}
-.story-text { padding: 56px; background: #fff; }
-.story-accent {
-  background: var(--ink); padding: 56px;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.story-accent p {
-  font-family: var(--serif); font-size: 20px; font-style: italic;
-  color: rgba(255,255,255,0.8); line-height: 1.6;
-}
-.story-accent strong { color: #fff; font-style: normal; }
-
-/* ── EXPERIENCE ── */
-#experience { background: var(--cream); }
-.exp-list { display: flex; flex-direction: column; gap: 2px; }
-.exp-card {
-  background: #fff; border: 1px solid var(--border);
-  padding: 40px 44px; position: relative;
-  transition: box-shadow 0.2s;
-}
-.exp-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-.exp-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px; background: var(--cream);
-  transition: background 0.2s;
-}
-.exp-card:hover::before { background: var(--red); }
-.exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-.exp-role {
-  font-family: var(--serif); font-size: 22px; font-weight: 400;
+.hero-h1 strong { font-weight: 500; }
+.hero-h1 span { color: var(--light); }
+.hero-sub {
+  font-size: 19px; font-weight: 300; color: var(--mid);
+  max-width: 580px; line-height: 1.6; margin-bottom: 64px;
   letter-spacing: -0.01em;
 }
-.exp-period {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--gray);
-  background: var(--cream); padding: 4px 10px; border-radius: 2px;
-  flex-shrink: 0; margin-left: 16px; margin-top: 4px;
+.hero-sub em { color: var(--ink); font-style: normal; font-weight: 400; }
+.hero-row {
+  display: flex; gap: 64px; flex-wrap: wrap;
+  padding-top: 40px; border-top: 1px solid var(--line);
 }
-.exp-org {
-  font-size: 13px; color: var(--red); font-weight: 500;
-  margin-bottom: 20px;
+.hero-item {}
+.hero-item-label {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--light); margin-bottom: 6px;
+}
+.hero-item-val {
+  font-size: 14px; color: var(--ink); font-weight: 400;
+}
+
+/* ─── LAYOUT UTIL ─── */
+.page { max-width: 840px; margin: 0 auto; padding: 0 80px; }
+section { border-top: 1px solid var(--line); }
+.s-inner { padding: 96px 0; }
+
+.eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--light);
+  margin-bottom: 56px;
+}
+h2 {
+  font-size: clamp(32px, 4vw, 48px); font-weight: 300;
+  letter-spacing: -0.03em; line-height: 1.1;
+  color: var(--ink); margin-bottom: 32px;
+}
+h2 b { font-weight: 500; }
+.lead {
+  font-size: 17px; font-weight: 300; color: var(--mid);
+  line-height: 1.7; max-width: 560px; margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+p.body {
+  font-size: 15px; font-weight: 300; color: #3a3a3c;
+  line-height: 1.8; margin-bottom: 18px;
+}
+p.body:last-child { margin-bottom: 0; }
+
+/* ─── STATEMENT ─── */
+.statement {
+  font-size: clamp(22px, 2.5vw, 28px); font-weight: 300;
+  letter-spacing: -0.02em; line-height: 1.5; color: var(--ink);
+  padding: 48px 0; border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line); margin: 48px 0;
+}
+.statement em { color: var(--red); font-style: normal; }
+
+/* ─── STATS ROW ─── */
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 64px;
+}
+.stat-box {
+  background: var(--white); padding: 32px 28px;
+}
+.stat-n {
+  font-size: 40px; font-weight: 300; letter-spacing: -0.04em;
+  color: var(--ink); line-height: 1; margin-bottom: 8px;
+}
+.stat-n b { font-weight: 500; color: var(--red); }
+.stat-l {
+  font-size: 12px; color: var(--light); line-height: 1.4;
+  font-weight: 400;
+}
+
+/* ─── EXP ─── */
+#experience { background: var(--off); }
+.exp-stack { display: flex; flex-direction: column; gap: 2px; }
+.exp-card {
+  background: var(--white); padding: 40px 44px;
+  display: grid; grid-template-columns: 200px 1fr; gap: 48px;
+  border: 1px solid var(--line);
+}
+.exp-left {}
+.exp-period {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--light); margin-bottom: 10px;
+}
+.exp-org-name {
+  font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px;
+}
+.exp-location {
+  font-size: 12px; color: var(--light);
+}
+.exp-right {}
+.exp-role {
+  font-size: 20px; font-weight: 400; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 18px; line-height: 1.2;
 }
 .exp-body {
-  font-size: 14.5px; color: #333; line-height: 1.8; font-weight: 300;
+  font-size: 14px; font-weight: 300; color: #3a3a3c; line-height: 1.8;
 }
 .exp-body p { margin-bottom: 12px; }
 .exp-body p:last-child { margin-bottom: 0; }
 .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
-.exp-tag {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
-  background: var(--cream); color: var(--gray);
-  padding: 4px 10px; border-radius: 2px;
-  border: 1px solid var(--border);
-  text-transform: uppercase;
+.tag {
+  font-size: 11px; font-weight: 400; color: var(--mid);
+  background: var(--off); border: 1px solid var(--line);
+  padding: 3px 10px; border-radius: 20px;
 }
 
-/* ── FIELD RESEARCH ── */
-#research { background: var(--ink); color: #fff; border-top-color: transparent; }
-#research .section-label { color: rgba(255,255,255,0.35); }
-#research .section-label::after { background: rgba(255,255,255,0.1); }
-#research h2 { color: #fff; }
-.research-grid {
+/* ─── FRAMEWORKS ─── */
+.fw-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: var(--line); border: 1px solid var(--line);
+}
+.fw-card { background: var(--white); padding: 32px 24px; }
+.fw-name {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 4px;
+}
+.fw-geo {
+  font-size: 11px; color: var(--light); text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 20px; font-weight: 500;
+}
+.fw-track { height: 1px; background: var(--line); margin-bottom: 16px; position: relative; }
+.fw-fill {
+  position: absolute; top: -0.5px; left: 0; height: 2px;
+  background: var(--ink); transition: width 1.4s cubic-bezier(0.25,0,0,1);
+}
+.fw-note { font-size: 12px; color: var(--light); line-height: 1.5; font-weight: 400; }
+
+/* ─── RESEARCH ─── */
+#research { background: var(--ink); border-top-color: transparent; }
+#research .eyebrow { color: rgba(255,255,255,0.3); }
+#research h2 { color: var(--white); }
+#research .lead { color: rgba(255,255,255,0.5); }
+.research-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 2px; margin-bottom: 48px;
+  gap: 1px; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08); margin-bottom: 48px;
 }
-.research-stat {
-  background: rgba(255,255,255,0.05);
-  padding: 36px 32px; text-align: center;
+.rs-box {
+  background: var(--ink); padding: 40px 32px;
 }
-.research-n {
-  font-family: var(--serif); font-size: 52px; font-weight: 700;
-  color: #fff; line-height: 1; margin-bottom: 10px;
+.rs-n {
+  font-size: 52px; font-weight: 300; letter-spacing: -0.05em;
+  color: var(--white); line-height: 1; margin-bottom: 10px;
 }
-.research-n span { color: var(--red); }
-.research-l {
-  font-size: 12px; color: rgba(255,255,255,0.5);
-  font-weight: 400; letter-spacing: 0.05em;
-  text-transform: uppercase; line-height: 1.5;
+.rs-n b { color: #ff6b35; font-weight: 500; }
+.rs-l { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em; }
+.finding-row {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 32px; align-items: start;
+  padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.07);
 }
-.research-findings { display: flex; flex-direction: column; gap: 2px; }
-.finding {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-  padding: 28px 36px; display: flex; gap: 28px; align-items: flex-start;
+.f-num {
+  font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em; padding-top: 3px;
 }
-.finding-num {
-  font-family: var(--serif); font-size: 13px;
-  color: rgba(255,255,255,0.25); flex-shrink: 0; margin-top: 3px;
-}
-.finding-title {
-  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9);
-  letter-spacing: 0.04em; text-transform: uppercase;
+.f-title {
+  font-size: 12px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.07em; color: rgba(255,255,255,0.5);
   margin-bottom: 6px;
 }
-.finding-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300; }
-.research-quote {
-  margin-top: 48px; padding: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
+.f-body { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; }
+.research-coda {
+  margin-top: 48px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.5);
+  line-height: 1.6; letter-spacing: -0.01em;
 }
-.research-quote p {
-  font-family: var(--serif); font-size: 20px; font-style: italic;
-  color: rgba(255,255,255,0.75); line-height: 1.6;
-}
+.research-coda em { color: rgba(255,255,255,0.8); font-style: normal; }
 
-/* ── LETTER ── */
-#letter { background: var(--paper); }
-.letter-body {
-  background: #fff; border: 1px solid var(--border);
-  padding: 56px 64px; position: relative;
+/* ─── COVER LETTER ─── */
+#letter { background: var(--white); }
+.letter-wrap {
+  border: 1px solid var(--line); padding: 64px 72px;
+  position: relative;
 }
-.letter-body::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: var(--red);
+.letter-wrap::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--ink);
 }
-.letter-p {
-  font-size: 15px; color: #1a1a1a; line-height: 1.9;
-  font-weight: 300; margin-bottom: 1.4rem;
+.l-salute { font-size: 16px; font-weight: 400; margin-bottom: 28px; }
+.l-p {
+  font-size: 15px; font-weight: 300; color: #1d1d1f;
+  line-height: 1.9; margin-bottom: 20px;
 }
-.letter-p:last-child { margin-bottom: 0; }
-.letter-salute {
-  font-family: var(--serif); font-size: 18px;
-  margin-bottom: 1.8rem !important;
-}
-.letter-sign { margin-top: 2rem !important; }
-.letter-sign strong { display: block; font-weight: 500; font-size: 16px; }
-.letter-sign span { font-size: 13px; color: var(--gray); }
-.copy-wrap { text-align: right; margin-bottom: 12px; }
+.l-p:last-child { margin-bottom: 0; }
+.l-sign { margin-top: 36px; }
+.l-sign strong { display: block; font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+.l-sign span { font-size: 13px; color: var(--light); }
 .copy-btn {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; background: none;
-  border: 1px solid var(--border); padding: 8px 18px;
-  cursor: pointer; color: var(--gray); border-radius: 2px;
-  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+  background: none; border: 1px solid var(--line);
+  padding: 8px 18px; cursor: pointer; color: var(--mid);
+  border-radius: 20px; margin-bottom: 16px;
+  transition: border-color 0.2s, color 0.2s;
 }
-.copy-btn:hover { border-color: var(--red); color: var(--red); }
+.copy-btn:hover { border-color: var(--ink); color: var(--ink); }
 
-/* ── FRAMEWORKS ── */
-#frameworks { background: var(--cream); }
-.fw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-.fw-card {
-  background: #fff; border: 1px solid var(--border);
-  padding: 32px 28px; text-align: center;
-}
-.fw-name {
-  font-family: var(--serif); font-size: 28px; font-weight: 700;
-  color: var(--ink); margin-bottom: 6px;
-}
-.fw-level {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--red); margin-bottom: 16px;
-}
-.fw-bar { height: 2px; background: var(--cream); border-radius: 1px; overflow: hidden; }
-.fw-fill { height: 100%; background: var(--ink); border-radius: 1px; transition: width 1.2s ease; }
-.fw-desc { font-size: 12px; color: var(--gray); margin-top: 14px; line-height: 1.5; }
-
-/* ── ABOUT (personal) ── */
-#about { background: var(--paper); }
-.about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-.about-aside {
-  padding-top: 8px;
-}
-.aside-label {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--gray);
-  margin-bottom: 24px;
-}
-.aside-item {
-  padding: 20px 0; border-bottom: 1px solid var(--border);
-}
-.aside-item:last-child { border-bottom: none; }
-.aside-key { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
-.aside-val { font-size: 14px; color: var(--ink); }
-
-/* ── INTERVIEW ── */
-#interview { background: var(--cream); }
-.qa-list { display: flex; flex-direction: column; gap: 2px; }
-.qa-item {
-  background: #fff; border: 1px solid var(--border); overflow: hidden;
-}
+/* ─── INTERVIEW ─── */
+#interview { background: var(--off); }
+.qa-stack { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.qa-item { background: var(--white); overflow: hidden; }
 .qa-q {
-  padding: 22px 32px; font-size: 14px; font-weight: 500;
+  padding: 20px 28px; font-size: 14px; font-weight: 400; color: var(--ink);
   cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-  gap: 20px; user-select: none; color: var(--ink);
-  transition: background 0.15s;
+  gap: 20px; user-select: none; transition: background 0.15s;
+  letter-spacing: -0.01em;
 }
-.qa-q:hover { background: var(--cream); }
+.qa-q:hover { background: var(--off); }
 .qa-icon {
-  font-size: 20px; color: var(--red); flex-shrink: 0;
-  transition: transform 0.25s; font-family: var(--serif);
+  width: 20px; height: 20px; flex-shrink: 0;
+  border: 1px solid var(--line); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--mid); transition: all 0.25s;
 }
-.qa-a {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.4s ease;
-  border-top: 0px solid var(--border);
+.qa-item.open .qa-icon {
+  background: var(--ink); border-color: var(--ink); color: var(--white);
+  transform: rotate(45deg);
 }
-.qa-a-inner {
-  padding: 0 32px;
-  font-size: 14px; color: #333; line-height: 1.8; font-weight: 300;
-  transition: padding 0.3s;
+.qa-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.qa-a-in {
+  padding: 0 28px; font-size: 14px; font-weight: 300;
+  color: #3a3a3c; line-height: 1.8; transition: padding 0.3s;
+  border-top: 0px solid var(--line);
 }
-.qa-item.open .qa-icon { transform: rotate(45deg); }
-.qa-item.open .qa-a { max-height: 500px; border-top-width: 1px; }
-.qa-item.open .qa-a-inner { padding: 24px 32px; }
+.qa-item.open .qa-a { max-height: 600px; }
+.qa-item.open .qa-a-in { padding: 20px 28px 28px; border-top-width: 1px; }
 
-/* ── FOOTER ── */
+/* ─── FOOTER ─── */
 footer {
-  background: var(--ink); color: rgba(255,255,255,0.5);
-  padding: 48px 40px; text-align: center;
-  font-size: 13px;
+  padding: 48px 80px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
 }
-footer strong { color: rgba(255,255,255,0.8); }
+.footer-id { font-size: 14px; font-weight: 500; color: var(--ink); }
+.footer-meta { font-size: 12px; color: var(--light); line-height: 1.6; text-align: right; }
 
-/* ── RESPONSIVE ── */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-left { min-height: 60vh; padding: 48px 28px; }
-  .hero-right { padding: 48px 28px; }
-  .story-grid { grid-template-columns: 1fr; }
-  .research-grid { grid-template-columns: 1fr; }
+  #hero { padding: 80px 24px 56px; }
+  .page { padding: 0 24px; }
+  footer { padding: 40px 24px; }
+  .exp-card { grid-template-columns: 1fr; gap: 16px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
   .fw-grid { grid-template-columns: 1fr 1fr; }
-  .about-split { grid-template-columns: 1fr; }
-  .section-wrap { padding: 64px 24px; }
-  .letter-body { padding: 36px 28px; }
-  nav { padding: 0 20px; }
+  .research-stats { grid-template-columns: 1fr; }
+  .letter-wrap { padding: 36px 28px; }
   .nav-links { display: none; }
 }
+
+/* ─── FADE-IN ─── */
+.fade { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade.in { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-name">Ashwin Gupta</div>
+  <div class="nav-id">Ashwin Gupta</div>
   <div class="nav-links">
-    <a href="#about" class="nav-link">About</a>
-    <a href="#experience" class="nav-link">Experience</a>
-    <a href="#research" class="nav-link">Field Research</a>
-    <a href="#letter" class="nav-link">Cover Letter</a>
-    <a href="#interview" class="nav-link">Interview Prep</a>
+    <a href="#about" class="nl">About</a>
+    <a href="#experience" class="nl">Experience</a>
+    <a href="#research" class="nl">Field Research</a>
+    <a href="#letter" class="nl">Cover Letter</a>
+    <a href="#interview" class="nl">Interview</a>
   </div>
-  <div class="nav-tag">Privacy Counsel · Apple</div>
+  <div class="nav-badge">Privacy Counsel · Apple</div>
 </nav>
 
-<!-- HERO -->
+<!-- ─── HERO ─── -->
 <section id="hero" style="border-top:none;">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Application — Privacy Counsel, Apple Bengaluru · EMEIA</div>
-    <div class="hero-name">Ashwin<br><em>Gupta</em></div>
-    <div class="hero-role">
-      India-qualified Advocate. <strong>PricewaterhouseCoopers</strong>, Gurugram.<br>
-      LL.M. EU Data Protection · Kyushu University.<br>
-      Previously: Foreign Attorney, Tokyo.
+  <div class="hero-label">Application — Privacy Counsel · Apple Bengaluru · EMEIA</div>
+  <h1 class="hero-h1">
+    <strong>Ashwin</strong> Gupta.<br>
+    <span>Privacy. Enforcement.</span><br>
+    <span>Cross-border.</span>
+  </h1>
+  <p class="hero-sub">
+    India-qualified Advocate with live experience handling <em>court requests, law enforcement escalations, and data subject complaints</em> — alongside cross-border privacy work across DPDP, GDPR, CCPA, and PDPA.
+  </p>
+  <div class="hero-row">
+    <div class="hero-item">
+      <div class="hero-item-label">Current</div>
+      <div class="hero-item-val">Associate, PwC · Gurugram</div>
+    </div>
+    <div class="hero-item">
+      <div class="hero-item-label">Qualification</div>
+      <div class="hero-item-val">Advocate, Bar Council of West Bengal</div>
+    </div>
+    <div class="hero-item">
+      <div class="hero-item-label">Education</div>
+      <div class="hero-item-val">LL.M. EU Data Protection · Kyushu University · 4.0</div>
+    </div>
+    <div class="hero-item">
+      <div class="hero-item-label">Previous</div>
+      <div class="hero-item-val">Foreign Attorney · Meilin Law, Tokyo</div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-pull">
-      I once watched a founder hand me a database schema when I asked what personal data his company collected.<br><br>
-      That was his answer. That gap — between what regulations say and what companies are actually prepared for — is the problem I have spent the last three years working inside.
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-n">0/5</div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="page"><div class="s-inner fade">
+    <div class="eyebrow">About</div>
+    <h2>I work inside<br><b>the gap.</b></h2>
+    <p class="lead">The gap between what privacy law requires and what organisations are actually prepared to do — that is where the most consequential work happens. It is where I have spent the last three years.</p>
+
+    <div class="stats-row fade">
+      <div class="stat-box">
+        <div class="stat-n"><b>0</b>/5</div>
         <div class="stat-l">Companies could meet the 72-hr breach window</div>
       </div>
-      <div class="stat">
-        <div class="stat-n">15+</div>
-        <div class="stat-l">Published pieces making privacy law legible</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">4</div>
+      <div class="stat-box">
+        <div class="stat-n"><b>4</b></div>
         <div class="stat-l">Major privacy frameworks — DPDP, GDPR, CCPA, PDPA</div>
       </div>
-      <div class="stat">
-        <div class="stat-n">&lt;1%</div>
+      <div class="stat-box">
+        <div class="stat-n"><b>3</b></div>
+        <div class="stat-l">Jurisdictions — India, EU, US/Japan cross-border practice</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">&lt;<b>1</b>%</div>
         <div class="stat-l">MEXT Scholarship selection rate · Japanese Government</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-wrap">
-    <div class="section-label">A little about me</div>
-    <h2>Privacy law that<br><em>works in practice.</em></h2>
-
-    <div class="about-split">
-      <div>
-        <p class="body-text">
-          I didn't plan on ending up in privacy law. I started out interested in international law and cross-border work, which took me from India to Japan, into arbitration, tech-law, and eventually data protection work that sat much closer to how companies actually operate.
-        </p>
-        <blockquote>
-          <p>"Privacy is only meaningful when it survives contact with real use — real systems, real vendors, real pressure."</p>
-        </blockquote>
-        <p class="body-text">
-          Somewhere along the way I realised I was less interested in legal theory on its own and more interested in what happens when law meets systems, products, and real people. At PwC, that means reviewing court orders for data disclosure, advising on law enforcement requests under the IT Act and CrPC, and handling breach escalations that require legal sign-off. It also means being embedded inside our CLM platform — where I advise on how the system itself handles personal data: access controls, vendor DPA gaps, audit trail integrity, retention policy. I do not advise from the outside. I work inside the system.
-        </p>
-        <p class="body-text">
-          Outside law, I DJ, collect too much music, and run #makinglawhuman — a project that started because I got tired of watching smart people shut down the moment legal language entered the room. Making complicated things feel intuitive is the instinct behind both.
-        </p>
-      </div>
-      <div class="about-aside">
-        <div class="aside-label">At a glance</div>
-        <div class="aside-item">
-          <div class="aside-key">Current Role</div>
-          <div class="aside-val">Associate, PricewaterhouseCoopers · Gurugram</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Qualification</div>
-          <div class="aside-val">Advocate, Bar Council of West Bengal</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Education</div>
-          <div class="aside-val">LL.M. EU Data Protection · Kyushu University, Japan · 4.0 GPA</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Awards</div>
-          <div class="aside-val">Jean Monnet Research Award · MEXT Scholarship (sub-1% selection)</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Previous</div>
-          <div class="aside-val">Foreign Attorney · Meilin International Law Firm, Tokyo</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Contact</div>
-          <div class="aside-val">ashwingupta0104@gmail.com · +91 82748 23131</div>
-        </div>
-        <div class="aside-item">
-          <div class="aside-key">Relocating to</div>
-          <div class="aside-val">Bengaluru (open, immediate)</div>
-        </div>
-      </div>
+    <div class="statement fade">
+      At PwC, I handle court orders for data disclosure, advise on law enforcement requests under the IT Act and CrPC, manage breach escalations requiring legal sign-off, and sit embedded inside our CLM platform advising on how it handles personal data in practice. <em>I do not review privacy from the outside. I work inside the system.</em>
     </div>
-  </div>
+
+    <p class="body fade">Before PwC, I spent nearly two years as a Foreign Attorney in Tokyo — conducting GDPR and CCPA research for clients navigating cross-border obligations, and supporting arbitration workstreams across three jurisdictions. Before that, an LL.M. with EU Data Protection specialisation at Kyushu University, where I graduated 4.0, received the Jean Monnet Research Award, and was fully funded by the Japanese Government's MEXT Scholarship — awarded to under 1% of applicants globally.</p>
+    <p class="body fade">Outside law: I run #makinglawhuman — a public series translating DPDP obligations into language that founders, security teams, and product managers can actually use. It started because I got tired of watching capable people shut down the moment legal language entered the room. Making complicated things feel intuitive is the instinct behind everything I do.</p>
+  </div></div>
 </section>
 
-<!-- HOW I GOT THERE -->
-<section id="journey" style="background:var(--cream);">
-  <div class="section-wrap">
-    <div class="section-label">How I got here</div>
-    <h2>Three countries.<br><em>One thread.</em></h2>
-
-    <div class="story-grid">
-      <div class="story-text">
-        <p class="body-text" style="margin-bottom:16px;">
-          It started with a five-year integrated law degree at Amity Law School, Noida — where I graduated with an 8.84 CGPA and enrolled as an Advocate with the Bar Council of West Bengal. International law was the plan. Data protection was not yet on my radar.
-        </p>
-        <p class="body-text" style="margin-bottom:16px;">
-          The MEXT Scholarship changed the trajectory. Awarded to under 1% of global applicants by the Japanese Government, it took me to Kyushu University — where I completed an LL.M. with a graduate diploma in EU Data Protection, graduated 4.0, and received the Jean Monnet Research Award for policy research on Ukraine's EU accession. That research gave me a sharp understanding of how EU regulatory standards propagate into non-EU jurisdictions — a frame I have used every day since.
-        </p>
-        <p class="body-text">
-          From Kyushu, I moved to Tokyo as a Foreign Attorney at Meilin International Law Firm, doing GDPR and CCPA research for Japanese clients and supporting arbitration workstreams across three jurisdictions. That is where I developed the precision I now rely on: finding exactly where a legal requirement meets an operational reality, and making something useful out of that collision.
-        </p>
-      </div>
-      <div class="story-accent">
-        <p>
-          "The gap between what the law says and what companies are actually prepared to do — that is the most interesting problem in privacy right now.<br><br>
-          <strong>PwC put me inside that gap. The DPDP field research let me map it."</strong>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
+<!-- ─── EXPERIENCE ─── -->
 <section id="experience">
-  <div class="section-wrap">
-    <div class="section-label">Experience</div>
-    <h2>What I have<br><em>actually done.</em></h2>
+  <div class="page"><div class="s-inner">
+    <div class="eyebrow fade">Experience</div>
+    <h2 class="fade">Three roles.<br><b>One through-line.</b></h2>
+    <p class="lead fade">Rewritten to reflect the privacy work inside each position — not the contract administration around it.</p>
 
-    <div class="exp-list">
+    <div class="exp-stack">
 
-      <div class="exp-card">
-        <div class="exp-top">
-          <div class="exp-role">Associate — Privacy, Compliance & Third-Party Risk</div>
+      <div class="exp-card fade">
+        <div class="exp-left">
           <div class="exp-period">Dec 2025 – Present</div>
+          <div class="exp-org-name">PricewaterhouseCoopers</div>
+          <div class="exp-location">Gurugram, India 🇮🇳</div>
         </div>
-        <div class="exp-org">PricewaterhouseCoopers · Gurugram 🇮🇳</div>
-        <div class="exp-body">
-          <p>My privacy work at PwC runs across three tracks simultaneously. The first is enforcement-facing: I review court orders for data disclosure to Indian authorities, advise on police and CBI data requests under the IT Act and CrPC, and handle internal breach escalations that require formal legal sign-off. I assess legal sufficiency, determine the appropriate scope of disclosure, advise internal stakeholders on execution, and ensure every decision is documented and defensible. Not every request is legally valid — holding that line clearly, while keeping the business relationship intact, is the core skill this work has built.</p>
-          <p>The second track is product and operational. I am the primary legal adviser embedded in the firm's contract lifecycle management platform, providing real-time advice on data privacy issues arising from how the system handles personal data: vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have also drafted and reviewed privacy policies and data processing agreements for products and services — which means I understand the documents that translate privacy commitments into enforceable obligations, and where the distance between the two tends to open.</p>
-          <p>The third track is compliance infrastructure: I support auditing and third-party risk frameworks, stress-testing data protection obligations across 100+ vendor agreements to ensure audit-readiness — not just contractual assertion — across the supply chain.</p>
-        </div>
-        <div class="exp-tags">
-          <span class="exp-tag">Court & LE requests</span>
-          <span class="exp-tag">Breach escalations</span>
-          <span class="exp-tag">DPA drafting</span>
-          <span class="exp-tag">Privacy policies</span>
-          <span class="exp-tag">Vendor DPA review</span>
-          <span class="exp-tag">Sub-processor audit</span>
-          <span class="exp-tag">Data residency</span>
-          <span class="exp-tag">Retention policy</span>
-          <span class="exp-tag">DPDP Act</span>
-          <span class="exp-tag">IT Act / CrPC</span>
-          <span class="exp-tag">Third-party risk</span>
-          <span class="exp-tag">CLM / DocuSign</span>
+        <div class="exp-right">
+          <div class="exp-role">Associate — Privacy, Compliance & Third-Party Risk</div>
+          <div class="exp-body">
+            <p>My privacy practice at PwC runs across three simultaneous tracks. First, enforcement-facing legal process: I review court orders for data disclosure to Indian authorities, advise on police and CBI data requests under the IT Act and CrPC, and manage internal breach escalations requiring formal legal sign-off. I assess legal sufficiency, determine appropriate scope of disclosure, advise stakeholders on execution, and ensure every decision is documented and defensible. Not every request is legally valid — holding that line clearly while keeping business relationships intact is the core skill this work has built.</p>
+            <p>Second, product and operational advisory: I am embedded in the firm's CLM platform as primary legal adviser on data privacy — covering vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have drafted and reviewed privacy policies and data processing agreements, giving me direct exposure to the documents that translate privacy commitments into enforceable obligations.</p>
+            <p>Third, compliance infrastructure: I support auditing and third-party risk frameworks across 100+ vendor agreements, stress-testing data protection obligations to ensure audit-readiness — not just contractual assertion — across the supply chain.</p>
+          </div>
+          <div class="exp-tags">
+            <span class="tag">Court & LE requests</span>
+            <span class="tag">Breach escalations</span>
+            <span class="tag">DPA drafting</span>
+            <span class="tag">Privacy policies</span>
+            <span class="tag">Sub-processor audit</span>
+            <span class="tag">Data residency</span>
+            <span class="tag">Retention policy</span>
+            <span class="tag">DPDP Act</span>
+            <span class="tag">IT Act / CrPC</span>
+            <span class="tag">Third-party risk</span>
+          </div>
         </div>
       </div>
 
-      <div class="exp-card">
-        <div class="exp-top">
-          <div class="exp-role">Foreign Attorney</div>
+      <div class="exp-card fade">
+        <div class="exp-left">
           <div class="exp-period">Apr 2024 – Dec 2025</div>
+          <div class="exp-org-name">Meilin International Law Firm</div>
+          <div class="exp-location">Tokyo, Japan 🇯🇵</div>
         </div>
-        <div class="exp-org">Meilin International Law Firm · Tokyo 🇯🇵</div>
-        <div class="exp-body">
-          <p>Conducted GDPR and CCPA regulatory research for Japanese clients operating across US, EU, and Japanese jurisdictions — translating legal obligations on cross-border data transfers, processor agreements, and data subject rights into operational guidance that business and compliance teams could actually implement. Reviewed 25+ cross-border commercial agreements, identifying 45+ deviations on indemnity, liability, and data protection terms.</p>
-          <p>Supported 10+ arbitration workstreams on dispute resolution and governing law provisions across US, EU, and Japanese frameworks — building familiarity with the formal legal process side of cross-jurisdictional practice, and the enforceability questions that arise when privacy obligations meet dispute contexts.</p>
-        </div>
-        <div class="exp-tags">
-          <span class="exp-tag">GDPR research</span>
-          <span class="exp-tag">CCPA research</span>
-          <span class="exp-tag">Cross-border data transfers</span>
-          <span class="exp-tag">Processor agreements</span>
-          <span class="exp-tag">Data subject rights</span>
-          <span class="exp-tag">US / EU / JP law</span>
-          <span class="exp-tag">Arbitration</span>
+        <div class="exp-right">
+          <div class="exp-role">Foreign Attorney</div>
+          <div class="exp-body">
+            <p>Conducted GDPR and CCPA regulatory research for Japanese clients operating across US, EU, and Japanese jurisdictions — translating cross-border data transfer obligations, processor agreement requirements, and data subject rights into operational guidance for business and compliance teams. Reviewed 25+ cross-border commercial agreements, identifying 45+ deviations on indemnity, liability, and data terms.</p>
+            <p>Supported 10+ arbitration workstreams on dispute resolution and governing law across US, EU, and Japanese frameworks — building precision in formal legal process and the enforceability questions that arise when privacy obligations meet dispute contexts.</p>
+          </div>
+          <div class="exp-tags">
+            <span class="tag">GDPR research</span>
+            <span class="tag">CCPA research</span>
+            <span class="tag">Cross-border data transfers</span>
+            <span class="tag">Processor agreements</span>
+            <span class="tag">Data subject rights</span>
+            <span class="tag">Arbitration</span>
+          </div>
         </div>
       </div>
 
-      <div class="exp-card">
-        <div class="exp-top">
+      <div class="exp-card fade">
+        <div class="exp-left">
+          <div class="exp-period">2022 – 2023</div>
+          <div class="exp-org-name">Kyushu University</div>
+          <div class="exp-location">Japan 🇯🇵 · 4.0 GPA</div>
+        </div>
+        <div class="exp-right">
           <div class="exp-role">LL.M. · EU Data Protection Graduate Diploma</div>
-          <div class="exp-period">2022–2023</div>
-        </div>
-        <div class="exp-org">Kyushu University · Japan 🇯🇵 · 4.0 / 4.0 · MEXT Scholar · Jean Monnet Award</div>
-        <div class="exp-body">
-          <p>Master of Laws with a graduate diploma in EU Data Protection — structured grounding in GDPR architecture, lawful bases, data subject rights, supervisory authority practice, adequacy standards, and the comparative cross-border transfer frameworks that underpin EMEIA privacy work. Research focus on Ukraine's EU accession: how adequacy frameworks propagate EU regulatory standards into non-EU jurisdictions — directly applicable to India's DPDP development trajectory.</p>
-          <p>Jean Monnet Research Award for policy research, awarded among 300+ postgraduates. MEXT Scholarship from the Japanese Government: under 1% global selection rate.</p>
-        </div>
-        <div class="exp-tags">
-          <span class="exp-tag">GDPR architecture</span>
-          <span class="exp-tag">EU-DP Diploma</span>
-          <span class="exp-tag">Adequacy standards</span>
-          <span class="exp-tag">Data subject rights</span>
-          <span class="exp-tag">Supervisory authority practice</span>
-          <span class="exp-tag">Jean Monnet Award</span>
-          <span class="exp-tag">MEXT Scholar</span>
+          <div class="exp-body">
+            <p>Master of Laws with EU Data Protection specialisation: GDPR architecture, lawful bases, data subject rights, supervisory authority practice, adequacy standards, and cross-border transfer frameworks underpinning EMEIA privacy work. Research focus on Ukraine's EU accession — how adequacy frameworks propagate EU regulatory standards into non-EU jurisdictions, directly applicable to India's DPDP development trajectory.</p>
+            <p>Jean Monnet Research Award for policy research, among 300+ postgraduates. MEXT Scholarship, Japanese Government — under 1% global selection rate.</p>
+          </div>
+          <div class="exp-tags">
+            <span class="tag">GDPR architecture</span>
+            <span class="tag">EU-DP Diploma</span>
+            <span class="tag">Adequacy standards</span>
+            <span class="tag">Data subject rights</span>
+            <span class="tag">Jean Monnet Award</span>
+            <span class="tag">MEXT Scholar</span>
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- FRAMEWORKS -->
-<section id="frameworks">
-  <div class="section-wrap">
-    <div class="section-label">Privacy Frameworks</div>
-    <h2>Four frameworks.<br><em>Across three jurisdictions.</em></h2>
-    <div class="fw-grid">
-      <div class="fw-card">
-        <div class="fw-name">DPDP</div>
-        <div class="fw-level">Primary — India</div>
-        <div class="fw-bar"><div class="fw-fill" style="width:95%"></div></div>
-        <div class="fw-desc">Field research pre-Rules. Live compliance work at PwC. Public toolkit. Breach response, consent, SDF, cross-border transfers.</div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-name">GDPR</div>
-        <div class="fw-level">Strong — EU/EMEIA</div>
-        <div class="fw-bar"><div class="fw-fill" style="width:88%"></div></div>
-        <div class="fw-desc">EU-DP LL.M. specialisation. Regulatory research at Meilin for Japanese clients. Jean Monnet Award research on adequacy frameworks.</div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-name">CCPA</div>
-        <div class="fw-level">Practiced — US</div>
-        <div class="fw-bar"><div class="fw-fill" style="width:72%"></div></div>
-        <div class="fw-desc">Regulatory research in Tokyo for clients with US data exposure. Opt-out rights, sale of personal data, processor distinctions.</div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-name">PDPA</div>
-        <div class="fw-level">Academic — SG</div>
-        <div class="fw-bar"><div class="fw-fill" style="width:58%"></div></div>
-        <div class="fw-desc">LL.M. coursework. Cross-border transfer frameworks and adequacy standards in Singapore's regulatory context.</div>
+    <!-- FRAMEWORKS -->
+    <div style="margin-top: 64px;">
+      <div class="eyebrow fade" style="margin-bottom:28px;">Privacy Frameworks</div>
+      <div class="fw-grid fade">
+        <div class="fw-card">
+          <div class="fw-name">DPDP</div>
+          <div class="fw-geo">India · Primary</div>
+          <div class="fw-track"><div class="fw-fill" style="width:0" data-w="95%"></div></div>
+          <div class="fw-note">Field research pre-Rules. Live PwC work. Public compliance toolkit. Breach, consent, SDF, cross-border.</div>
+        </div>
+        <div class="fw-card">
+          <div class="fw-name">GDPR</div>
+          <div class="fw-geo">EU/EMEIA · Strong</div>
+          <div class="fw-track"><div class="fw-fill" style="width:0" data-w="88%"></div></div>
+          <div class="fw-note">EU-DP LL.M. specialisation. Regulatory research at Meilin. Jean Monnet Award research on adequacy.</div>
+        </div>
+        <div class="fw-card">
+          <div class="fw-name">CCPA</div>
+          <div class="fw-geo">US · Practiced</div>
+          <div class="fw-track"><div class="fw-fill" style="width:0" data-w="72%"></div></div>
+          <div class="fw-note">Regulatory research in Tokyo for clients with US data exposure. Opt-out, sale of data, processor distinctions.</div>
+        </div>
+        <div class="fw-card">
+          <div class="fw-name">PDPA</div>
+          <div class="fw-geo">Singapore · Academic</div>
+          <div class="fw-track"><div class="fw-fill" style="width:0" data-w="58%"></div></div>
+          <div class="fw-note">LL.M. coursework. Cross-border transfer frameworks and adequacy in Singapore's regulatory context.</div>
+        </div>
       </div>
     </div>
-  </div>
+
+  </div></div>
 </section>
 
-<!-- FIELD RESEARCH -->
+<!-- ─── RESEARCH ─── -->
 <section id="research">
-  <div class="section-wrap">
-    <div class="section-label">DPDP Field Research · #makinglawhuman</div>
-    <h2 style="color:#fff;">I stress-tested Indian companies<br><em style="color:rgba(255,255,255,0.45)">before the Rules were published.</em></h2>
+  <div class="page"><div class="s-inner">
+    <div class="eyebrow">#makinglawhuman · DPDP Field Research</div>
+    <h2>I stress-tested Indian companies<br><b style="color:#fff;">before the Rules were published.</b></h2>
+    <p class="lead">Weeks of direct conversations with founders, security leads, and vendors — before the DPDP Rules were finalised. What I found was not non-compliance as exception. It was non-compliance as default.</p>
 
-    <div class="research-grid">
-      <div class="research-stat">
-        <div class="research-n"><span>0</span>/5</div>
-        <div class="research-l">Companies could meet the 72-hour breach response window</div>
+    <div class="research-stats fade">
+      <div class="rs-box">
+        <div class="rs-n"><b>0</b>/5</div>
+        <div class="rs-l">Companies could meet the 72-hour breach response window</div>
       </div>
-      <div class="research-stat">
-        <div class="research-n">18<span>+</span></div>
-        <div class="research-l">Sites with broken consent flows documented and analysed</div>
+      <div class="rs-box">
+        <div class="rs-n">18<b>+</b></div>
+        <div class="rs-l">Sites with broken consent flows documented</div>
       </div>
-      <div class="research-stat">
-        <div class="research-n">15<span>+</span></div>
-        <div class="research-l">Published pieces making DPDP obligations legible and actionable</div>
+      <div class="rs-box">
+        <div class="rs-n">15<b>+</b></div>
+        <div class="rs-l">Published pieces in the #makinglawhuman series</div>
       </div>
     </div>
 
-    <div class="research-findings">
-      <div class="finding">
-        <div class="finding-num">01</div>
-        <div>
-          <div class="finding-title">Breach Response</div>
-          <div class="finding-body">Spoke to five companies. None could detect, verify, escalate, and notify within 72 hours. One security lead: "forget reporting, we'd be lucky to confirm it." Another's breach plan was a Slack channel. The 72-hour window is not theoretical — it is the first thing enforcement will test.</div>
-        </div>
+    <div class="finding-row fade">
+      <div class="f-num">01</div>
+      <div>
+        <div class="f-title">Breach Response</div>
+        <div class="f-body">Five companies. None could detect, verify, escalate, and notify within 72 hours. One security lead: "forget reporting, we'd be lucky to confirm it." Another's breach plan was a Slack channel. The 72-hour window is the first thing enforcement will test — and almost no Indian company is ready for it.</div>
       </div>
-      <div class="finding">
-        <div class="finding-num">02</div>
-        <div>
-          <div class="finding-title">Consent Flows</div>
-          <div class="finding-body">Pre-checked boxes on 8 sites. Bundled consent on 10. One app demanded cookie acceptance before showing the homepage. None passed DPDP's Section 6 standard: free, specific, informed, unconditional, unambiguous. Consent was universally treated as a UX checkbox, not a legal obligation.</div>
-        </div>
+    </div>
+    <div class="finding-row fade">
+      <div class="f-num">02</div>
+      <div>
+        <div class="f-title">Consent Flows</div>
+        <div class="f-body">Pre-checked boxes on 8 sites. Bundled consent on 10. One app demanded cookie acceptance before showing its homepage. None passed Section 6's standard: free, specific, informed, unconditional, unambiguous. Consent was treated as a UX checkbox — not a legal obligation with enforcement consequence.</div>
       </div>
-      <div class="finding">
-        <div class="finding-num">03</div>
-        <div>
-          <div class="finding-title">Vendor Transparency</div>
-          <div class="finding-body">15 vendors contacted. Answers were vague, outdated, or absent. Three admitted using sub-processors they "cannot fully disclose." One founder: "our vendor has good reviews, we trust them." Processor accountability — a DPDP core obligation — was treated as someone else's problem.</div>
-        </div>
+    </div>
+    <div class="finding-row fade">
+      <div class="f-num">03</div>
+      <div>
+        <div class="f-title">Vendor Transparency</div>
+        <div class="f-body">15 vendors contacted. Answers were vague, outdated, or absent. Three admitted using sub-processors they "cannot fully disclose." Processor accountability — a DPDP core obligation — was universally treated as someone else's problem.</div>
       </div>
-      <div class="finding">
-        <div class="finding-num">04</div>
-        <div>
-          <div class="finding-title">SDF Awareness</div>
-          <div class="finding-body">A health-tech startup and an ed-tech platform processing children's data had never heard the term "Significant Data Fiduciary." Neither knew about DPIAs, independent audit requirements, or the obligation to appoint a DPO. The obligations most likely to generate enforcement action were the ones least known.</div>
-        </div>
+    </div>
+    <div class="finding-row fade">
+      <div class="f-num">04</div>
+      <div>
+        <div class="f-title">SDF Awareness</div>
+        <div class="f-body">A health-tech startup and an ed-tech platform processing children's data had never heard "Significant Data Fiduciary." Neither knew about DPIAs, independent audit requirements, or DPO obligations. The obligations most likely to generate enforcement action were the least known.</div>
       </div>
     </div>
 
-    <div class="research-quote">
-      <p>"DPDP will not fail because the law is too strict. It will fail because too many companies will start preparing only after they've already been caught."<br><br>— LinkedIn, post-Rules publication follow-up</p>
+    <div class="research-coda fade">
+      "DPDP will not fail because the law is too strict.<br>
+      It will fail because too many companies will start preparing<br>
+      <em>only after they've already been caught."</em>
     </div>
-  </div>
+
+  </div></div>
 </section>
 
-<!-- COVER LETTER -->
+<!-- ─── COVER LETTER ─── -->
 <section id="letter">
-  <div class="section-wrap">
-    <div class="section-label">Cover Letter</div>
-    <h2>Why Apple.<br><em>Why this role.</em></h2>
-    <div class="copy-wrap">
-      <button class="copy-btn" onclick="copyLetter()">Copy to clipboard</button>
-    </div>
-    <div class="letter-body" id="letter-content">
-      <p class="letter-p letter-salute">Dear Hiring Team,</p>
-      <p class="letter-p">I am applying for the Privacy Counsel role in Bengaluru. My background maps directly to what this position requires: live experience handling court requests, law enforcement escalations, and data subject complaints; hands-on advisory work on privacy by design inside product and vendor systems; cross-border expertise across DPDP, GDPR, and CCPA; and a full India legal qualification. I have been doing this work — not preparing to do it.</p>
-      <p class="letter-p">At PricewaterhouseCoopers, my privacy practice runs across three tracks simultaneously. I handle formal legal process: reviewing court orders for data disclosure to Indian authorities, advising on police and CBI data requests under the IT Act and CrPC, and managing internal breach escalations requiring legal sign-off. I know what it means to give a clear, defensible answer under pressure, with business stakeholders and timelines pulling in opposite directions. The second track is product and operational: I am the primary legal adviser embedded in our contract lifecycle management platform, advising on vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have also drafted and reviewed privacy policies and data processing agreements — the documents that translate privacy commitments into enforceable obligations. The third track is compliance architecture: supporting auditing and third-party risk frameworks, ensuring data protection obligations across 100+ vendor agreements are independently verifiable, not just contractually asserted.</p>
-      <p class="letter-p">Before PwC, I spent nearly two years as a Foreign Attorney in Japan, conducting GDPR and CCPA regulatory research for clients navigating cross-border data obligations and supporting arbitration workstreams across US, EU, and Japanese frameworks. I hold an LL.M. with an EU Data Protection specialisation from Kyushu University — awarded the Jean Monnet Research Award and fully funded by the MEXT Scholarship (sub-1% selection rate). That combination of EU-DP specialisation and cross-border practice is directly relevant to a role where India is the primary jurisdiction but European frameworks set the analytical benchmark for EMEIA-facing work.</p>
-      <p class="letter-p">On India specifically: I have tracked the DPDP Act in forensic detail since before the Rules were published. I spent weeks speaking directly with founders, security leads, and vendors — testing breach response capability, consent flows, processor visibility, and awareness of significant data fiduciary obligations. The structural gaps I found across sectors gave me a practitioner-level map of where Indian companies are most exposed and where regulatory scrutiny will concentrate first. That is not something I have theorised about. It is something I have tested and published.</p>
-      <p class="letter-p">Apple's privacy practice is the standard others are measured against. A role inside it — advising products, handling enforcement, responding to regulators, and working across legal, engineering, and business functions in one of the most complex jurisdictional environments in the world — is exactly the kind of work I have been building toward. I would welcome the opportunity to bring the full weight of that experience to your team.</p>
-      <p class="letter-p letter-sign">
+  <div class="page"><div class="s-inner">
+    <div class="eyebrow fade">Cover Letter · Apple Privacy Counsel</div>
+    <h2 class="fade">Why Apple.<br><b>Why now.</b></h2>
+    <button class="copy-btn" onclick="copyLetter()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      Copy letter
+    </button>
+    <div class="letter-wrap fade" id="letter-content">
+      <p class="l-salute">Dear Hiring Team,</p>
+      <p class="l-p">I am applying for the Privacy Counsel role in Bengaluru. My background maps directly to what this position requires: live experience handling court requests, law enforcement escalations, and data subject complaints; hands-on advisory work on privacy by design inside product and vendor systems; cross-border expertise across DPDP, GDPR, and CCPA; and a full India legal qualification. I have been doing this work — not preparing to do it.</p>
+      <p class="l-p">At PricewaterhouseCoopers, my privacy practice runs across three tracks simultaneously. I handle formal legal process: reviewing court orders for data disclosure to Indian authorities, advising on police and CBI data requests under the IT Act and CrPC, and managing internal breach escalations requiring legal sign-off. I know what it means to give a clear, defensible answer under pressure, with business stakeholders and timelines pulling in opposite directions. The second track is product and operational: I am the primary legal adviser embedded in our CLM platform, advising on vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have also drafted and reviewed privacy policies and data processing agreements — the documents that translate privacy commitments into enforceable obligations, and where the gap between the two typically opens. The third track is compliance architecture: supporting auditing and third-party risk frameworks, ensuring data protection obligations across 100+ vendor agreements are independently verifiable, not just contractually asserted.</p>
+      <p class="l-p">Before PwC, I spent nearly two years as a Foreign Attorney in Japan, conducting GDPR and CCPA regulatory research for clients navigating cross-border data obligations, and supporting arbitration workstreams across US, EU, and Japanese frameworks. I hold an LL.M. with an EU Data Protection specialisation from Kyushu University — awarded the Jean Monnet Research Award and fully funded by the MEXT Scholarship (sub-1% selection rate). That combination of EU-DP specialisation and cross-border practice is directly relevant to a role where India is the primary jurisdiction but European frameworks set the analytical benchmark for EMEIA-facing work.</p>
+      <p class="l-p">On India specifically: I tracked the DPDP Act in forensic detail since before the Rules were published — speaking directly with founders, security leads, and vendors to test breach response capability, consent flows, processor visibility, and SDF awareness. The structural gaps I found gave me a practitioner-level map of where Indian companies are most exposed and where regulatory scrutiny will concentrate first. That is not something I have read about. It is something I have tested, documented, and published.</p>
+      <p class="l-p">Apple's privacy practice is the standard others are measured against. A role inside it — advising products, handling enforcement, responding to regulators, working across legal, engineering, and business functions — is exactly where my background points. I would welcome the opportunity to bring that to your team.</p>
+      <p class="l-p l-sign">
         <strong>Ashwin Gupta</strong>
         <span>Advocate, Bar Council of West Bengal · ashwingupta0104@gmail.com · +91 82748 23131</span>
       </p>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<!-- INTERVIEW PREP -->
+<!-- ─── INTERVIEW ─── -->
 <section id="interview">
-  <div class="section-wrap">
-    <div class="section-label">Interview Preparation</div>
-    <h2>Six questions.<br><em>Six answers that land.</em></h2>
+  <div class="page"><div class="s-inner">
+    <div class="eyebrow fade">Interview Preparation</div>
+    <h2 class="fade">Six questions.<br><b>Owned answers.</b></h2>
+    <p class="lead fade">Every answer is grounded in your actual work. No hedging. No disclaimers. Declarative.</p>
 
-    <div class="qa-list">
+    <div class="qa-stack fade">
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"Walk us through your privacy experience." <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">Lead with PwC and lead with enforcement. Court orders, law enforcement requests, breach escalations — you handle formal legal process on data daily. Then move to product and operational: you are embedded in the CLM platform advising on how the system handles personal data, and you have drafted DPAs and privacy policies. Close with cross-border foundation: GDPR and CCPA research in Tokyo, EU-DP LL.M. Land on India: DPDP field research that pre-dated the Rules. The arc is enforcement → product → framework → India. That is the full stack of what this role needs, and you have each layer from direct experience.</div></div>
+        <div class="qa-q" onclick="tog(this)">"Walk us through your privacy experience."<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">Lead with PwC and lead with enforcement. Court orders, law enforcement requests, breach escalations — formal legal process on data, daily. Then product and operational: embedded in the CLM platform advising on how the system handles personal data, plus DPA and privacy policy drafting. Then cross-border foundation: GDPR and CCPA research in Tokyo, EU-DP LL.M. Close on India: DPDP field research pre-dating the Rules. The arc is enforcement → product → framework → India. That is the full stack this role needs — and you have each layer from direct experience, not from coursework.</div></div>
       </div>
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"Describe a time you handled a law enforcement or court data request." <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">At PwC you handle this in three forms: court-directed data disclosure orders, police and CBI requests under the IT Act and CrPC, and internal breach escalations requiring legal sign-off. Walk them through your workflow: receive the request → assess legal sufficiency and applicable standard → determine scope of disclosure → advise internal stakeholders → document the decision rationale. Emphasise the judgment call: not every request is legally valid, and your job is to hold that line clearly while keeping the business relationship intact. That balance — legally sound, commercially aware, documented — is exactly what Apple needs from someone in this seat.</div></div>
+        <div class="qa-q" onclick="tog(this)">"Describe handling a law enforcement or court data request."<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">At PwC you handle this in three forms: court-directed disclosure orders, police and CBI requests under the IT Act and CrPC, and internal breach escalations requiring legal sign-off. Walk them through the workflow: receive the request → assess legal sufficiency and applicable standard → determine scope of disclosure → advise internal stakeholders → document the decision rationale. Emphasise the judgment: not every request is legally valid. Holding that line clearly while keeping the business relationship intact is the core skill. That balance — legally sound, commercially aware, fully documented — is exactly what Apple needs from someone in this seat.</div></div>
       </div>
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"How have you worked with engineering or product teams on privacy?" <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">The CLM platform work is your answer — and it is a strong one. You are not reviewing contracts at arm's length; you are embedded in the system advising on how it is built to handle personal data. That means vendor access control architecture, cloud and storage configuration risk, audit trail design, and retention logic. You have also drafted and reviewed privacy policies and DPAs — so you understand how privacy commitments are structured at document level and where the gap between commitment and practice typically opens. Bridge this to Apple directly: privacy by design at Apple means being inside product decisions from the start. You have done that at PwC. You know what it looks like in practice.</div></div>
+        <div class="qa-q" onclick="tog(this)">"How have you worked with product or engineering teams on privacy?"<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">The CLM platform work is your answer. You are not reviewing contracts at arm's length — you are embedded in the system advising on how it handles personal data in practice: vendor access control architecture, cloud and storage configuration risk, audit trail design, retention logic. You have also drafted DPAs and privacy policies, so you understand how privacy commitments are structured at document level and where the gap between commitment and practice typically opens. Bridge this to Apple: privacy by design means being inside product decisions from the start. You have done that at PwC. You know what it looks like operationally — not theoretically.</div></div>
       </div>
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"What's your understanding of the DPDP Act and how it affects Apple?" <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">You know this better than most candidates will. Lead with the structural points: Section 6 consent (free, specific, informed, unconditional, unambiguous — and the gap between that standard and what Indian companies deploy), Significant Data Fiduciary classification and the obligations it triggers (DPIAs, independent audits, DPO), the 72-hour breach window and the systemic unreadiness you personally documented. For Apple specifically: as a technology company processing large volumes of Indian user data, Apple will face SDF scrutiny, data localisation questions as Rules evolve, and law enforcement requests under the framework. Your field research means you can speak to these as documented failure points in real organisations — not as statutory abstractions.</div></div>
+        <div class="qa-q" onclick="tog(this)">"What's your view on the DPDP Act and how it affects Apple?"<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">You know this better than most candidates will. Lead with structural points: Section 6 consent (free, specific, informed, unconditional, unambiguous — and the gap between that standard and what Indian companies deploy), SDF classification and the obligations it triggers (DPIAs, independent audits, DPO), the 72-hour breach window and the systemic unreadiness you personally documented. For Apple specifically: as a technology company processing large volumes of Indian user data, Apple faces SDF scrutiny, data localisation questions as Rules evolve, and law enforcement requests under the framework. Your field research means you can speak to these as documented failure points in real organisations — not statutory abstractions.</div></div>
       </div>
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"Why Apple, and why privacy counsel specifically?" <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">Do not reach for the "Apple cares about privacy" line — they know that, and it says nothing about you. Instead: Apple's privacy practice is formative, not defensive. Privacy by default is built into product architecture, which means counsel work here shapes products from the inside — not reviews them after the fact. The EMEIA + India scope is exactly the cross-border environment your background is built for: EU-DP specialisation, GDPR and CCPA research, DPDP expertise, and live enforcement-side practice. And Apple's scale means your advice has consequence that most in-house privacy roles cannot offer at this stage of a career. That is a genuine reason — not a rehearsed one.</div></div>
+        <div class="qa-q" onclick="tog(this)">"Why Apple? Why privacy counsel specifically?"<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">Do not reach for "Apple cares about privacy" — they know that. Instead: Apple's privacy practice is formative, not defensive. Privacy by default is built into product architecture, which means counsel work here shapes products from the inside — not reviews them after the fact. The EMEIA and India scope is exactly the cross-border environment your background is built for: EU-DP specialisation, GDPR and CCPA research, DPDP expertise, live enforcement-side practice. And Apple's scale means your advice has consequence that most in-house privacy roles cannot offer this early in a career. That is a genuine reason — not a prepared one.</div></div>
       </div>
+
       <div class="qa-item">
-        <div class="qa-q" onclick="toggle(this)">"You're relatively early in your career. Why should we choose you?" <span class="qa-icon">+</span></div>
-        <div class="qa-a"><div class="qa-a-inner">Do not apologise for the timeline. Redirect to what it contains. In roughly 2.5 years post-qualification you have handled real enforcement-side privacy work (court orders, law enforcement requests, breach escalations); advised on privacy by design inside a live product system; drafted DPAs and privacy policies; conducted GDPR and CCPA research across jurisdictions; earned an EU-DP specialised LL.M. funded by one of the most competitive scholarships in legal academia; and produced the most detailed pre-Rules DPDP compliance research published by any practising advocate in India. That is not a thin record — it is a front-loaded one. The question is not whether you have enough experience. It is whether the experience maps to what this role needs. It does.</div></div>
+        <div class="qa-q" onclick="tog(this)">"You're relatively early-career. Why should we pick you?"<div class="qa-icon">+</div></div>
+        <div class="qa-a"><div class="qa-a-in">Do not apologise for the timeline. Redirect to what it contains. In roughly 2.5 years post-qualification: live enforcement-side privacy work (court orders, law enforcement requests, breach escalations); privacy-by-design advisory inside a live product system; DPA and privacy policy drafting; GDPR and CCPA research across three jurisdictions; an EU-DP specialised LL.M. funded by one of the most competitive international scholarships in legal academia; and the most detailed pre-Rules DPDP compliance research published by any practising advocate in India. The question is not whether the experience is sufficient. It is whether it maps to what this role needs. It does — precisely.</div></div>
       </div>
+
     </div>
-  </div>
+  </div></div>
 </section>
 
-<!-- FOOTER -->
+<!-- ─── FOOTER ─── -->
 <footer>
-  <strong>Ashwin Gupta</strong> · Advocate, Bar Council of West Bengal<br>
-  <span style="margin-top:8px;display:block;">Application for Privacy Counsel · Apple Bengaluru · EMEIA</span>
-  <span style="margin-top:6px;display:block;">ashwingupta0104@gmail.com · +91 82748 23131 · <a href="https://www.linkedin.com/in/ashwin-gupta001/" style="color:rgba(255,255,255,0.4);text-decoration:none;">LinkedIn</a></span>
+  <div class="footer-id">Ashwin Gupta · Privacy Counsel Application · Apple Bengaluru</div>
+  <div class="footer-meta">ashwingupta0104@gmail.com · +91 82748 23131<br>Advocate, Bar Council of West Bengal</div>
 </footer>
 
 <script>
-function toggle(el) {
+// accordion
+function tog(el) {
   const item = el.closest('.qa-item');
-  const wasOpen = item.classList.contains('open');
+  const open = item.classList.contains('open');
   document.querySelectorAll('.qa-item.open').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  if (!open) item.classList.add('open');
 }
 
+// copy letter
 function copyLetter() {
-  const text = document.getElementById('letter-content').innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.copy-btn');
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy to clipboard', 2000);
+  const t = document.getElementById('letter-content').innerText;
+  navigator.clipboard.writeText(t).then(() => {
+    const b = document.querySelector('.copy-btn');
+    b.textContent = 'Copied';
+    setTimeout(() => b.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy letter`, 2000);
   });
 }
 
-// Active nav on scroll
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section[id]');
+// active nav
+const nls = document.querySelectorAll('.nl');
+const secs = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 80) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-});
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  nls.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
 
-// Animate framework bars on scroll
+// fade-in on scroll
+const fades = document.querySelectorAll('.fade');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+fades.forEach(f => io.observe(f));
+
+// fw bars animate
 const bars = document.querySelectorAll('.fw-fill');
-bars.forEach(b => { const w = b.style.width; b.style.width = '0'; b._target = w; });
-const observer = new IntersectionObserver(entries => {
+const fwObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      bars.forEach(b => { b.style.width = b._target; });
-      observer.disconnect();
+      bars.forEach(b => { b.style.width = b.dataset.w; });
+      fwObs.disconnect();
     }
   });
-}, { threshold: 0.3 });
-const fwSection = document.getElementById('frameworks');
-if (fwSection) observer.observe(fwSection);
+}, { threshold: 0.4 });
+const fwSec = document.getElementById('experience');
+if (fwSec) fwObs.observe(fwSec);
 </script>
 </body>
 </html>
