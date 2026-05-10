@@ -33,13 +33,13 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   height: 48px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
   padding: 0 24px;
   background: rgba(255,255,255,0.85);
   backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--line);
 }
-.nav-id {
+.nav-center {
   font-size: 13px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em;
 }
 .nav-links { display: flex; gap: 0; }
@@ -277,45 +277,6 @@ p.body:last-child { margin-bottom: 0; }
 }
 .copy-btn:hover { border-color: var(--ink); color: var(--ink); }
 
-/* ─── INTERVIEW ─── */
-#interview { background: var(--off); }
-.qa-stack { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.qa-item { background: var(--white); overflow: hidden; }
-.qa-q {
-  padding: 20px 28px; font-size: 14px; font-weight: 400; color: var(--ink);
-  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-  gap: 20px; user-select: none; transition: background 0.15s;
-  letter-spacing: -0.01em;
-}
-.qa-q:hover { background: var(--off); }
-.qa-icon {
-  width: 20px; height: 20px; flex-shrink: 0;
-  border: 1px solid var(--line); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; color: var(--mid); transition: all 0.25s;
-}
-.qa-item.open .qa-icon {
-  background: var(--ink); border-color: var(--ink); color: var(--white);
-  transform: rotate(45deg);
-}
-.qa-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.qa-a-in {
-  padding: 0 28px; font-size: 14px; font-weight: 300;
-  color: #3a3a3c; line-height: 1.8; transition: padding 0.3s;
-  border-top: 0px solid var(--line);
-}
-.qa-item.open .qa-a { max-height: 600px; }
-.qa-item.open .qa-a-in { padding: 20px 28px 28px; border-top-width: 1px; }
-
-/* ─── FOOTER ─── */
-footer {
-  padding: 48px 80px; border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-}
-.footer-id { font-size: 14px; font-weight: 500; color: var(--ink); }
-.footer-meta { font-size: 12px; color: var(--light); line-height: 1.6; text-align: right; }
-
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   #hero { padding: 80px 24px 56px; }
@@ -337,31 +298,23 @@ footer {
 <body>
 
 <nav>
-  <div class="nav-id">Ashwin Gupta</div>
-  <div class="nav-links">
-    <a href="#about" class="nl">About</a>
-    <a href="#experience" class="nl">Experience</a>
-    <a href="#research" class="nl">Field Research</a>
-    <a href="#letter" class="nl">Cover Letter</a>
-    <a href="#interview" class="nl">Interview</a>
-  </div>
+  <div class="nav-center">Application for Privacy Counsel, Apple, Bengaluru, India</div>
 </nav>
 
 <!-- ─── HERO ─── -->
 <section id="hero" style="border-top:none;">
-  <div class="hero-label">Application — Privacy Counsel · Apple Bengaluru · EMEIA</div>
   <h1 class="hero-h1">
     <strong>Ashwin</strong> Gupta.<br>
     <span>Privacy. Enforcement.</span><br>
     <span>Cross-border.</span>
   </h1>
   <p class="hero-sub">
-    India-qualified Advocate with live experience handling <em>court requests, law enforcement escalations, and data subject complaints</em> — alongside cross-border privacy work across DPDP, GDPR, CCPA, and PDPA.
+    Privacy counsel. Court requests, law enforcement, data subject rights — across GDPR, CCPA, and DPDP. India-qualified. Tokyo-trained.
   </p>
   <div class="hero-row">
     <div class="hero-item">
       <div class="hero-item-label">Current</div>
-      <div class="hero-item-val">Associate, PwC · Gurugram</div>
+      <div class="hero-item-val">Associate (Privacy Ops) at PricewaterhouseCoopers (PwC), Gurugram, Haryana, India</div>
     </div>
     <div class="hero-item">
       <div class="hero-item-label">Qualification</div>
@@ -369,11 +322,11 @@ footer {
     </div>
     <div class="hero-item">
       <div class="hero-item-label">Education</div>
-      <div class="hero-item-val">LL.M. EU Data Protection · Kyushu University · 4.0</div>
+      <div class="hero-item-val">LL.M. from Kyushu University, Fukuoka, Japan and BBA. LL.B. (Hons.), Amity University, Noida, Uttar Pradesh India</div>
     </div>
     <div class="hero-item">
       <div class="hero-item-label">Previous</div>
-      <div class="hero-item-val">Foreign Attorney · Meilin Law, Tokyo</div>
+      <div class="hero-item-val">Foreign Attorney, Meilin International Law Firm, Tokyo, Japan</div>
     </div>
   </div>
 </section>
@@ -383,7 +336,7 @@ footer {
   <div class="page"><div class="s-inner fade">
     <div class="eyebrow">About</div>
     <h2>I work inside<br><b>the gap.</b></h2>
-    <p class="lead">The gap between what privacy law requires and what organisations are actually prepared to do — that is where the most consequential work happens. It is where I have spent the last three years.</p>
+    <p class="lead">The gap between what privacy law requires and what organisations are actually prepared to do — that is where the most consequential work happens. It is where I have spent the las[...]
 
     <div class="stats-row fade">
       <div class="stat-box">
@@ -405,11 +358,11 @@ footer {
     </div>
 
     <div class="statement fade">
-      At PwC, I handle court orders for data disclosure, advise on law enforcement requests under the IT Act and CrPC, manage breach escalations requiring legal sign-off, and sit embedded inside our CLM platform advising on how it handles personal data in practice. <em>I do not review privacy from the outside. I work inside the system.</em>
+      At PwC, I handle court orders for data disclosure, advise on law enforcement requests under the IT Act and CrPC, manage breach escalations requiring legal sign-off, and sit embedded inside produ[...]
     </div>
 
-    <p class="body fade">Before PwC, I spent nearly two years as a Foreign Attorney in Tokyo — conducting GDPR and CCPA research for clients navigating cross-border obligations, and supporting arbitration workstreams across three jurisdictions. Before that, an LL.M. with EU Data Protection specialisation at Kyushu University, where I graduated 4.0, received the Jean Monnet Research Award, and was fully funded by the Japanese Government's MEXT Scholarship — awarded to under 1% of applicants globally.</p>
-    <p class="body fade">Outside law: I run #makinglawhuman — a public series translating DPDP obligations into language that founders, security teams, and product managers can actually use. It started because I got tired of watching capable people shut down the moment legal language entered the room. Making complicated things feel intuitive is the instinct behind everything I do.</p>
+    <p class="body fade">Before PwC, I spent nearly two years as a Foreign Attorney in Tokyo — conducting GDPR and CCPA research for clients navigating cross-border obligations, and supporting arbit[...]
+    <p class="body fade">Outside law: I run #makinglawhuman — a public series translating DPDP obligations into language that founders, security teams, and product managers can actually use. It stem[...]
   </div></div>
 </section>
 
@@ -431,9 +384,7 @@ footer {
         <div class="exp-right">
           <div class="exp-role">Associate — Privacy, Compliance & Third-Party Risk</div>
           <div class="exp-body">
-            <p>My privacy practice at PwC runs across three simultaneous tracks. First, enforcement-facing legal process: I review court orders for data disclosure to Indian authorities, advise on police and CBI data requests under the IT Act and CrPC, and manage internal breach escalations requiring formal legal sign-off. I assess legal sufficiency, determine appropriate scope of disclosure, advise stakeholders on execution, and ensure every decision is documented and defensible. Not every request is legally valid — holding that line clearly while keeping business relationships intact is the core skill this work has built.</p>
-            <p>Second, product and operational advisory: I am embedded in the firm's CLM platform as primary legal adviser on data privacy — covering vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have drafted and reviewed privacy policies and data processing agreements, giving me direct exposure to the documents that translate privacy commitments into enforceable obligations.</p>
-            <p>Third, compliance infrastructure: I support auditing and third-party risk frameworks across 100+ vendor agreements, stress-testing data protection obligations to ensure audit-readiness — not just contractual assertion — across the supply chain.</p>
+            <p>My privacy practice at PwC runs across three simultaneous tracks. First, enforcement-facing legal process: I review court orders for data disclosure to Indian authorities, advise on pol[...]
           </div>
           <div class="exp-tags">
             <span class="tag">Court & LE requests</span>
@@ -459,8 +410,7 @@ footer {
         <div class="exp-right">
           <div class="exp-role">Foreign Attorney</div>
           <div class="exp-body">
-            <p>Conducted GDPR and CCPA regulatory research for Japanese clients operating across US, EU, and Japanese jurisdictions — translating cross-border data transfer obligations, processor agreement requirements, and data subject rights into operational guidance for business and compliance teams. Reviewed 25+ cross-border commercial agreements, identifying 45+ deviations on indemnity, liability, and data terms.</p>
-            <p>Supported 10+ arbitration workstreams on dispute resolution and governing law across US, EU, and Japanese frameworks — building precision in formal legal process and the enforceability questions that arise when privacy obligations meet dispute contexts.</p>
+            <p>Conducted GDPR and CCPA regulatory research for Japanese clients operating across US, EU, and Japanese jurisdictions — translating cross-border data transfer obligations, processor ag[...]
           </div>
           <div class="exp-tags">
             <span class="tag">GDPR research</span>
@@ -482,8 +432,7 @@ footer {
         <div class="exp-right">
           <div class="exp-role">LL.M. · EU Data Protection Graduate Diploma</div>
           <div class="exp-body">
-            <p>Master of Laws with EU Data Protection specialisation: GDPR architecture, lawful bases, data subject rights, supervisory authority practice, adequacy standards, and cross-border transfer frameworks underpinning EMEIA privacy work. Research focus on Ukraine's EU accession — how adequacy frameworks propagate EU regulatory standards into non-EU jurisdictions, directly applicable to India's DPDP development trajectory.</p>
-            <p>Jean Monnet Research Award for policy research, among 300+ postgraduates. MEXT Scholarship, Japanese Government — under 1% global selection rate.</p>
+            <p>Master of Laws with EU Data Protection specialisation: GDPR architecture, lawful bases, data subject rights, supervisory authority practice, adequacy standards, and cross-border transfe[...]
           </div>
           <div class="exp-tags">
             <span class="tag">GDPR architecture</span>
@@ -537,7 +486,7 @@ footer {
   <div class="page"><div class="s-inner">
     <div class="eyebrow">#makinglawhuman · DPDP Field Research</div>
     <h2>I stress-tested Indian companies<br><b style="color:#fff;">before the Rules were published.</b></h2>
-    <p class="lead">Weeks of direct conversations with founders, security leads, and vendors — before the DPDP Rules were finalised. What I found was not non-compliance as exception. It was non-compliance as default.</p>
+    <p class="lead">Weeks of direct conversations with founders, security leads, and vendors — before the DPDP Rules were finalised. What I found was not non-compliance as exception. It was non-comp[...]
 
     <div class="research-stats fade">
       <div class="rs-box">
@@ -558,28 +507,28 @@ footer {
       <div class="f-num">01</div>
       <div>
         <div class="f-title">Breach Response</div>
-        <div class="f-body">Five companies. None could detect, verify, escalate, and notify within 72 hours. One security lead: "forget reporting, we'd be lucky to confirm it." Another's breach plan was a Slack channel. The 72-hour window is the first thing enforcement will test — and almost no Indian company is ready for it.</div>
+        <div class="f-body">Five companies. None could detect, verify, escalate, and notify within 72 hours. One security lead: "forget reporting, we'd be lucky to confirm it." Another's breach protoc[...]
       </div>
     </div>
     <div class="finding-row fade">
       <div class="f-num">02</div>
       <div>
         <div class="f-title">Consent Flows</div>
-        <div class="f-body">Pre-checked boxes on 8 sites. Bundled consent on 10. One app demanded cookie acceptance before showing its homepage. None passed Section 6's standard: free, specific, informed, unconditional, unambiguous. Consent was treated as a UX checkbox — not a legal obligation with enforcement consequence.</div>
+        <div class="f-body">Pre-checked boxes on 8 sites. Bundled consent on 10. One app demanded cookie acceptance before showing its homepage. None passed Section 6's standard: free, specific, infor[...]
       </div>
     </div>
     <div class="finding-row fade">
       <div class="f-num">03</div>
       <div>
         <div class="f-title">Vendor Transparency</div>
-        <div class="f-body">15 vendors contacted. Answers were vague, outdated, or absent. Three admitted using sub-processors they "cannot fully disclose." Processor accountability — a DPDP core obligation — was universally treated as someone else's problem.</div>
+        <div class="f-body">15 vendors contacted. Answers were vague, outdated, or absent. Three admitted using sub-processors they "cannot fully disclose." Processor accountability — a DPDP corners[...]
       </div>
     </div>
     <div class="finding-row fade">
       <div class="f-num">04</div>
       <div>
         <div class="f-title">SDF Awareness</div>
-        <div class="f-body">A health-tech startup and an ed-tech platform processing children's data had never heard "Significant Data Fiduciary." Neither knew about DPIAs, independent audit requirements, or DPO obligations. The obligations most likely to generate enforcement action were the least known.</div>
+        <div class="f-body">A health-tech startup and an ed-tech platform processing children's data had never heard "Significant Data Fiduciary." Neither knew about DPIAs, independent audit requireme[...]
       </div>
     </div>
 
@@ -598,63 +547,20 @@ footer {
     <div class="eyebrow fade">Cover Letter · Apple Privacy Counsel</div>
     <h2 class="fade">Why Apple.<br><b>Why now.</b></h2>
     <button class="copy-btn" onclick="copyLetter()">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h[...]
       Copy letter
     </button>
     <div class="letter-wrap fade" id="letter-content">
       <p class="l-salute">Dear Hiring Team,</p>
-      <p class="l-p">I am applying for the Privacy Counsel role in Bengaluru. My background maps directly to what this position requires: live experience handling court requests, law enforcement escalations, and data subject complaints; hands-on advisory work on privacy by design inside product and vendor systems; cross-border expertise across DPDP, GDPR, and CCPA; and a full India legal qualification. I have been doing this work — not preparing to do it.</p>
-      <p class="l-p">At PricewaterhouseCoopers, my privacy practice runs across three tracks simultaneously. I handle formal legal process: reviewing court orders for data disclosure to Indian authorities, advising on police and CBI data requests under the IT Act and CrPC, and managing internal breach escalations requiring legal sign-off. I know what it means to give a clear, defensible answer under pressure, with business stakeholders and timelines pulling in opposite directions. The second track is product and operational: I am the primary legal adviser embedded in our CLM platform, advising on vendor DPA gaps, sub-processor disclosure obligations, cloud and data residency risk, access control architecture, audit trail integrity, and retention policy compliance. I have also drafted and reviewed privacy policies and data processing agreements — the documents that translate privacy commitments into enforceable obligations, and where the gap between the two typically opens. The third track is compliance architecture: supporting auditing and third-party risk frameworks, ensuring data protection obligations across 100+ vendor agreements are independently verifiable, not just contractually asserted.</p>
-      <p class="l-p">Before PwC, I spent nearly two years as a Foreign Attorney in Japan, conducting GDPR and CCPA regulatory research for clients navigating cross-border data obligations, and supporting arbitration workstreams across US, EU, and Japanese frameworks. I hold an LL.M. with an EU Data Protection specialisation from Kyushu University — awarded the Jean Monnet Research Award and fully funded by the MEXT Scholarship (sub-1% selection rate). That combination of EU-DP specialisation and cross-border practice is directly relevant to a role where India is the primary jurisdiction but European frameworks set the analytical benchmark for EMEIA-facing work.</p>
-      <p class="l-p">On India specifically: I tracked the DPDP Act in forensic detail since before the Rules were published — speaking directly with founders, security leads, and vendors to test breach response capability, consent flows, processor visibility, and SDF awareness. The structural gaps I found gave me a practitioner-level map of where Indian companies are most exposed and where regulatory scrutiny will concentrate first. That is not something I have read about. It is something I have tested, documented, and published.</p>
-      <p class="l-p">Apple's privacy practice is the standard others are measured against. A role inside it — advising products, handling enforcement, responding to regulators, working across legal, engineering, and business functions — is exactly where my background points. I would welcome the opportunity to bring that to your team.</p>
+      <p class="l-p">I am applying for the Privacy Counsel role in Bengaluru. My background maps directly to what this position requires: live experience handling court requests, law enforcement escal[...]
+      <p class="l-p">At PricewaterhouseCoopers, my privacy practice runs across three tracks simultaneously. I handle formal legal process: reviewing court orders for data disclosure to Indian authori[...]
+      <p class="l-p">Before PwC, I spent nearly two years as a Foreign Attorney in Japan, conducting GDPR and CCPA regulatory research for clients navigating cross-border data obligations, and support[...]
+      <p class="l-p">On India specifically: I tracked the DPDP Act in forensic detail since before the Rules were published — speaking directly with founders, security leads, and vendors to test com[...]
+      <p class="l-p">Apple's privacy practice is the standard others are measured against. A role inside it — advising products on privacy by design, handling escalations from regulators, working em[...]
       <p class="l-p l-sign">
         <strong>Ashwin Gupta</strong>
         <span>Advocate, Bar Council of West Bengal · ashwingupta0104@gmail.com · +91 82748 23131</span>
       </p>
-    </div>
-  </div></div>
-</section>
-
-<!-- ─── INTERVIEW ─── -->
-<section id="interview">
-  <div class="page"><div class="s-inner">
-    <div class="eyebrow fade">Interview Preparation</div>
-    <h2 class="fade">Six questions.<br><b>Owned answers.</b></h2>
-    <p class="lead fade">Every answer is grounded in your actual work. No hedging. No disclaimers. Declarative.</p>
-
-    <div class="qa-stack fade">
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"Walk us through your privacy experience."<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">Lead with PwC and lead with enforcement. Court orders, law enforcement requests, breach escalations — formal legal process on data, daily. Then product and operational: embedded in the CLM platform advising on how the system handles personal data, plus DPA and privacy policy drafting. Then cross-border foundation: GDPR and CCPA research in Tokyo, EU-DP LL.M. Close on India: DPDP field research pre-dating the Rules. The arc is enforcement → product → framework → India. That is the full stack this role needs — and you have each layer from direct experience, not from coursework.</div></div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"Describe handling a law enforcement or court data request."<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">At PwC you handle this in three forms: court-directed disclosure orders, police and CBI requests under the IT Act and CrPC, and internal breach escalations requiring legal sign-off. Walk them through the workflow: receive the request → assess legal sufficiency and applicable standard → determine scope of disclosure → advise internal stakeholders → document the decision rationale. Emphasise the judgment: not every request is legally valid. Holding that line clearly while keeping the business relationship intact is the core skill. That balance — legally sound, commercially aware, fully documented — is exactly what Apple needs from someone in this seat.</div></div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"How have you worked with product or engineering teams on privacy?"<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">The CLM platform work is your answer. You are not reviewing contracts at arm's length — you are embedded in the system advising on how it handles personal data in practice: vendor access control architecture, cloud and storage configuration risk, audit trail design, retention logic. You have also drafted DPAs and privacy policies, so you understand how privacy commitments are structured at document level and where the gap between commitment and practice typically opens. Bridge this to Apple: privacy by design means being inside product decisions from the start. You have done that at PwC. You know what it looks like operationally — not theoretically.</div></div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"What's your view on the DPDP Act and how it affects Apple?"<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">You know this better than most candidates will. Lead with structural points: Section 6 consent (free, specific, informed, unconditional, unambiguous — and the gap between that standard and what Indian companies deploy), SDF classification and the obligations it triggers (DPIAs, independent audits, DPO), the 72-hour breach window and the systemic unreadiness you personally documented. For Apple specifically: as a technology company processing large volumes of Indian user data, Apple faces SDF scrutiny, data localisation questions as Rules evolve, and law enforcement requests under the framework. Your field research means you can speak to these as documented failure points in real organisations — not statutory abstractions.</div></div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"Why Apple? Why privacy counsel specifically?"<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">Do not reach for "Apple cares about privacy" — they know that. Instead: Apple's privacy practice is formative, not defensive. Privacy by default is built into product architecture, which means counsel work here shapes products from the inside — not reviews them after the fact. The EMEIA and India scope is exactly the cross-border environment your background is built for: EU-DP specialisation, GDPR and CCPA research, DPDP expertise, live enforcement-side practice. And Apple's scale means your advice has consequence that most in-house privacy roles cannot offer this early in a career. That is a genuine reason — not a prepared one.</div></div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="tog(this)">"You're relatively early-career. Why should we pick you?"<div class="qa-icon">+</div></div>
-        <div class="qa-a"><div class="qa-a-in">Do not apologise for the timeline. Redirect to what it contains. In roughly 2.5 years post-qualification: live enforcement-side privacy work (court orders, law enforcement requests, breach escalations); privacy-by-design advisory inside a live product system; DPA and privacy policy drafting; GDPR and CCPA research across three jurisdictions; an EU-DP specialised LL.M. funded by one of the most competitive international scholarships in legal academia; and the most detailed pre-Rules DPDP compliance research published by any practising advocate in India. The question is not whether the experience is sufficient. It is whether it maps to what this role needs. It does — precisely.</div></div>
-      </div>
-
     </div>
   </div></div>
 </section>
@@ -666,21 +572,14 @@ footer {
 </footer>
 
 <script>
-// accordion
-function tog(el) {
-  const item = el.closest('.qa-item');
-  const open = item.classList.contains('open');
-  document.querySelectorAll('.qa-item.open').forEach(i => i.classList.remove('open'));
-  if (!open) item.classList.add('open');
-}
-
 // copy letter
 function copyLetter() {
   const t = document.getElementById('letter-content').innerText;
   navigator.clipboard.writeText(t).then(() => {
     const b = document.querySelector('.copy-btn');
     b.textContent = 'Copied';
-    setTimeout(() => b.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy letter`, 2000);
+    setTimeout(() => b.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15[...]
+      Copy letter`, 2000);
   });
 }
 
